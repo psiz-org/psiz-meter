@@ -1,8 +1,10 @@
 TODO.md
+/datasets/
+/datasets/ilsvrc2012_train/
+/src/psiz_meter/target_models/assemble_deepcluster.py
 
 # Automatic version detection
-/src/psiz_target_model_assessment/version.py
-
+/src/psiz_meter/version.py
 
 # Compiled python modules.
 *.pyc
