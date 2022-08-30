@@ -1,0 +1,26 @@
+\begin{table}
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+Target Model & \multicolumn{2}{|c|}{\bf{Seed (v0.1)}} & \multicolumn{2}{|c|}{\bf{Full (v0.2)}} \\
+  & dot & cos & dot & cos \\
+\hline\hline
+VGG16 & 0.25 & \bf{0.28} & 0.25 & \bf{0.27} \\
+VGG19 & 0.27 & \bf{0.29} & 0.26 & \bf{0.27} \\
+ResNet50 & 0.23 & \bf{0.36} & 0.25 & \bf{0.30} \\
+ResNet101 & 0.18 & \bf{0.33} & 0.23 & \bf{0.29} \\
+ResNet152 & 0.18 & \bf{0.34} & 0.24 & \bf{0.29} \\
+ResNet50V2 & 0.26 & \bf{0.30} & 0.23 & \bf{0.24} \\
+Xception & 0.01 & \bf{0.06} & \bf{0.06} & 0.04 \\
+DenseNet121 & 0.17 & \bf{0.26} & 0.19 & \bf{0.22} \\
+InceptionV3 & 0.01 & \bf{0.06} & \bf{0.04} & 0.03 \\
+Inception & & & & \\
+\hspace{3mm}ResNetV2 & \bf{0.00} & -0.00 & -0.00 & \bf{0.02} \\
+MobileNet & 0.23 & \bf{0.29} & 0.19 & \bf{0.23} \\
+DeepCluster & & & & \\
+\hspace{3mm}VGG16 & 0.01 & \bf{0.11} & -0.02 & \bf{0.07} \\
+\hline
+\end{tabular}
+\end{center}
+\caption{The psychological embedding correlation for various target models. Embedding correlation computes the Spearman correlation between the similarity matrices of an ensemble of psychological embeddings and a target model.}
+\end{table}

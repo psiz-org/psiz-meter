@@ -1,0 +1,27 @@
+\begin{table}
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline
+Target Model & \multicolumn{3}{|c|}{\bf{Seed (v0.1)}} & \multicolumn{3}{|c|}{\bf{Full (v0.2)}} \\
+  & L1 & L2 & cos & L1 & L2 & cos \\
+\hline\hline
+Psych. Emb. & -- & \bf{81.7} & -- & -- & \bf{80.7} & -- \\
+VGG16 & 61.1 & 57.8 & \bf{69.6} & 67.4 & 63.1 & \bf{74.4} \\
+VGG19 & 60.9 & 57.7 & \bf{69.8} & 67.3 & 63.1 & \bf{74.6} \\
+ResNet50 & 62.3 & 62.5 & \bf{70.9} & 68.6 & 69.0 & \bf{75.2} \\
+ResNet101 & 60.8 & 61.6 & \bf{70.2} & 68.0 & 68.8 & \bf{75.0} \\
+ResNet152 & 60.7 & 61.3 & \bf{70.4} & 68.1 & 68.8 & \bf{75.2} \\
+ResNet50V2 & 57.6 & 57.9 & \bf{67.0} & 65.4 & 66.7 & \bf{72.9} \\
+Xception & 55.3 & 53.9 & \bf{56.3} & 66.2 & 65.1 & \bf{67.2} \\
+DenseNet121 & 64.2 & 62.7 & \bf{67.3} & 70.9 & 70.0 & \bf{73.3} \\
+InceptionV3 & 54.9 & 54.2 & \bf{55.6} & 65.1 & 64.7 & \bf{65.5} \\
+Inception & & & & & & \\
+\hspace{3mm}ResNetV2 & 53.2 & 53.0 & \bf{54.0} & 64.8 & 64.8 & \bf{65.2} \\
+MobileNet & 64.7 & 64.3 & \bf{67.5} & 69.9 & 69.5 & \bf{72.8} \\
+DeepCluster & & & & & & \\
+\hspace{3mm}VGG16 & 56.8 & 58.0 & \bf{61.9} & 59.0 & 60.6 & \bf{65.8} \\
+\hline
+\end{tabular}
+\end{center}
+\caption{Triplet accuracy for various target models. Triplet accuracy measures the ability of a target model to correctly predict implicit triplet inequalities derived from the 8-rank-2 similarity judgments. The best performing result for each model is emphasized in bold. The high triplet accuracy of the psychological embedding demonstrates that there is substantial room for improvement.}
+\end{table}

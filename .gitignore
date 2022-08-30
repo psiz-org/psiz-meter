@@ -1,6 +1,7 @@
 TODO.md
-/datasets/
 /datasets/ilsvrc2012_train/
+/datasets/ilsvrc2012_val/triplets/
+/datasets/ilsvrc2012_val/target_embeddings/
 /src/psiz_meter/target_models/assemble_deepcluster.py
 
 # Automatic version detection
