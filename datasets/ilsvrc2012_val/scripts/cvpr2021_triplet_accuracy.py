@@ -68,7 +68,7 @@ def cvpr2021_triplet_accuracy(fp_project):
     
     # Check triplets directory exists.
     if not os.path.exists(fp_triplets):
-        fp_triplets.mkdir(parents=True, exist_ok=True) 
+        fp_triplets.mkdir(parents=True, exist_ok=True)
 
     # Convert 8-rank-2 observations to implied triplets for different dataset
     # versions and save. Triplets will be used determine triplet accuracy.

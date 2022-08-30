@@ -56,6 +56,10 @@ def ilsvrc_val_target_embeddings(fp_project, fp_ilsvrc2012_val):
     )
     version_dataset = 'ilsvrc_val_v0_2'
 
+    # Check `target_embeddings`` directory exists.
+    if not os.path.exists(fp_target_emb):
+        fp_target_emb.mkdir(parents=True, exist_ok=True) 
+
     # Precompute and save target model feature representations
     # (i.e., embeddings).
     model_name_list = [
