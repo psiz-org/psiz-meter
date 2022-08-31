@@ -12,6 +12,10 @@ Provides python scripts and tools for evaluating target models relative to human
 
 The repository currently contains scripts for evaluating embeddings for one dataset: the ILSVRC 2012 validation dataset. Additional datasets may be added in the future.
 
+## Installation
+1. Clone the GitHub repository to your local machine: `git clone https://github.com/psiz-org/psiz-meter`. Since there are large files stored on GitHub Large File Storage, it is usually faster to instead clone using: `git lfs clone https://github.com/psiz-org/psiz-meter`.
+2. Install the cloned respository to your local virtual enviroment: `pip install /path/to/cloned/psiz-meter/`
+
 ## Datasets
 Scripts, intermediate assets, and final assets for each dataset can be found in the `dataset` directory. For a given dataset, assets include PsiZ models (`psiz_models/`) and target model embeddings (`target_embeddings/`). 
 
@@ -20,7 +24,7 @@ Scripts, intermediate assets, and final assets for each dataset can be found in 
 #### Roads & Love, 2021 CVPR
 
 To reproduce the results presented in Roads & Love (2021), execute the following scripts in `datasets/ilsvrc2012_val/scripts/`:
-1. Assemble embeddings for all target models by executing `assemble_target_embeddings.py`. The pre-assembled target embeddings are not included in the respository.
+1. (optional) Assemble embeddings for all target models by executing `assemble_target_embeddings.py`. The pre-assembled target embeddings are included in the respository (via Git Large File Storage), so you can skip this step if you want. The scripts for assembling DeepCluster embeddings is more involved and can be found on the DeepCluster GitHub page..
 2. Compute *triplet accuracy* for all target models by executing `cvpr2021_triplet_accuracy.py`.
 3. Output LaTeX table of triplet accuracies by executing `cvpr2021_table2.py`.
 3. Compute *embedding correlation* for all target models by executing `cvpr2021_embedding_correlation.py`.
