@@ -13,8 +13,9 @@ Provides python scripts and tools for evaluating target models relative to human
 The repository currently contains scripts for evaluating embeddings for one dataset: the ILSVRC 2012 validation dataset. Additional datasets may be added in the future.
 
 ## Installation
-1. Clone the GitHub repository to your local machine: `git clone https://github.com/psiz-org/psiz-meter`. Since there are large files stored on GitHub Large File Storage, it is usually faster to instead clone using: `git lfs clone https://github.com/psiz-org/psiz-meter`.
+1. Clone the GitHub repository to your local machine: `git clone https://github.com/psiz-org/psiz-meter`.
 2. Install the cloned respository to your local virtual enviroment: `pip install /path/to/cloned/psiz-meter/`
+3. (optional) Download large files hosted on [OSF psiz-meter](https://osf.io/dpt2f/).
 
 ## Datasets
 Scripts, intermediate assets, and final assets for each dataset can be found in the `dataset` directory. For a given dataset, assets include PsiZ models (`psiz_models/`) and target model embeddings (`target_embeddings/`). 
@@ -24,7 +25,7 @@ Scripts, intermediate assets, and final assets for each dataset can be found in 
 #### Roads & Love, 2021 CVPR
 
 To reproduce the results presented in Roads & Love (2021), execute the following scripts in `datasets/ilsvrc2012_val/scripts/`:
-1. (optional) Assemble embeddings for all target models by executing `assemble_target_embeddings.py`. The pre-assembled target embeddings are included in the respository (via Git Large File Storage), so you can skip this step if you want. The scripts for assembling DeepCluster embeddings is more involved and can be found on the DeepCluster GitHub page..
+1. (optional) Assemble embeddings for all target models by executing `assemble_target_embeddings.py`. The pre-assembled target embeddings are hosted on [OSF psiz-meter](https://osf.io/dpt2f/), so you can skip this step if you have already downloaded the necessary files. The scripts for assembling DeepCluster embeddings is more involved and can be found on the DeepCluster GitHub page.
 2. Compute *triplet accuracy* for all target models by executing `cvpr2021_triplet_accuracy.py`.
 3. Output LaTeX table of triplet accuracies by executing `cvpr2021_table2.py`.
 3. Compute *embedding correlation* for all target models by executing `cvpr2021_embedding_correlation.py`.
@@ -46,9 +47,9 @@ Please see the following paper for more details on how the models were evaluated
 ## Notes
 * For all scripts, you will need to update the variabel `fp_project` to reflect the location of the repository directory on your machine.
 * Running the scripts is computationally expensive. To make the pipeline more user-friendly, some intermediate results are saved to disk (i.e, target embeddings, triplet observations, triplet accuracy results, embedding correlation results).
-* Running the scripts as-is will overwrite existing results in the database. If you would like to start a new database of results, specify a new filename for the variable `fp_db` in the scripts (e.g., `db_cvpr2021_new.txt` instead of `db_cvpr2021.txt`).
-* This repository does not include raw dataset files. For example, if you want to derive ILSVRC 2012 embeddings using a particular computer vision model, you must source the image files on your own.
-* When you load the PsiZ models included in this repository, you will get a TensorFlow warning: "WARNING:tensorflow:SavedModel saved prior to TF 2.5 detected when loading Keras model. Please ensure that you are saving the model with model.save() or tf.keras.models.save_model(), *NOT* tf.saved_model.save(). To confirm, there should be a file named "keras_metadata.pb" in the SavedModel directory." This is because the models were saved with an older version of TF, but they still work fine with the TF version specified by this repository.
+* Running the scripts as-is will overwrite existing results in the database. If you would like to start a new database of results (and keep the original database unmodified), specify a new filename for the variable `fp_db` in the scripts (e.g., `db_cvpr2021_new.txt` instead of `db_cvpr2021.txt`).
+* This repository does not include dataset files. For example, if you want to derive ILSVRC 2012 embeddings using a particular computer vision model, you must source the image files on your own.
+* When you load the PsiZ models included in this repository, you will get a TensorFlow warning that you can safely ignore: "WARNING:tensorflow:SavedModel saved prior to TF 2.5 detected when loading Keras model. Please ensure that you are saving the model with model.save() or tf.keras.models.save_model(), *NOT* tf.saved_model.save(). To confirm, there should be a file named "keras_metadata.pb" in the SavedModel directory." This warning is generated because the models were saved with an older version of TF, but they still work fine with the TF version specified by this repository.
 
 ## Resources
 * Official Psiz Documentation: [psiz.readthedocs.io/en/latest](https://psiz.readthedocs.io/en/latest/)
